@@ -1,4 +1,8 @@
-package br.dev.biah.seniorinvest.servlet;
+package br.dev.biah.seniorinvest.controller;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.*;
+import java.io.IOException;
 
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
@@ -7,4 +11,3 @@ public class LogoutServlet extends HttpServlet {
         resp.sendRedirect("index.jsp");
     }
 }
-

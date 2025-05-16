@@ -1,4 +1,4 @@
-package br.dev.biah.seniorinvest_grandfinale;
+/*package br.dev.biah.seniorinvest;
 
 import java.io.*;
 
@@ -25,4 +25,4 @@ public class HelloServlet extends HttpServlet {
 
     public void destroy() {
     }
-}
+}*/
