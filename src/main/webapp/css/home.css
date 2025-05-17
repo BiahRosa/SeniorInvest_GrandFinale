@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-image: linear-gradient(to bottom, #9FCBAF, #2E8B57);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.navbar {
+    background-color: #4b6584;
+    width: 100%;
+}
+
+.navbar-brand, .nav-link, .bnt {
+    color: #e2e2e2;
+}
+
+
+.card-custom {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.84);
+    transition: 0.3s;
+}
+
+.card-custom:hover {
+    transform: translateY(-3px);
+}
+
+.btn-invest {
+    background-color: #0e8046;
+    border: none;
+}
+
+.btn-gasto {
+    background-color: #981229;
+    border: none;
+}
+
+.btn-conta {
+    background-color: #133896;
+    border: none;
+}
