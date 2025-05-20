@@ -44,4 +44,28 @@ public class OracleUsuarioDAO implements UsuarioDAO {
             System.err.println("Erro ao inserir usuário: " + e.getMessage());
         }
     }
+
+    public Usuario buscarPorEmail(String email) {
+        Usuario usuario = null;
+        String sql = "SELECT nome, email, senha FROM T_FIN_USUARIO WHERE email = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                usuario = new Usuario();
+                usuario.setNome(rs.getString("nome"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setSenha(rs.getString("senha"));
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao buscar usuário por email: " + e.getMessage());
+        }
+
+        return usuario;
+    }
 }

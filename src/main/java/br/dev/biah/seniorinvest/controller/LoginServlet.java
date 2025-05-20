@@ -26,7 +26,11 @@ public class LoginServlet extends HttpServlet {
 
         if (dao.validarUsuario(usuario)) {
             HttpSession session = req.getSession();
-            session.setAttribute("usuarioLogado", email);
+
+            Usuario completo = dao.buscarPorEmail(email);
+            session.setAttribute("usuarioLogado", completo);
+
+
             resp.sendRedirect("home.jsp");
         } else {
             req.setAttribute("erro", "Usuário ou senha inválidos.");

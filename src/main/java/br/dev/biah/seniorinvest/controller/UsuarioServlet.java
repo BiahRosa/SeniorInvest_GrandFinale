@@ -21,6 +21,12 @@ public class UsuarioServlet extends HttpServlet {
         usuario.setSenha(req.getParameter("senha"));
 
         dao.insert(usuario);
-        resp.sendRedirect("cadastro");
+
+        //mensagem
+        HttpSession session = req.getSession();
+        session.setAttribute("mensagemCadastro", "Usuário cadastrado com sucesso!");
+
+        resp.sendRedirect(req.getContextPath() + "/index.jsp");
+
     }
 }

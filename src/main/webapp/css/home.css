@@ -1,54 +1,79 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background-image: linear-gradient(to bottom, #9FCBAF, #2E8B57);
-    background-repeat: no-repeat;
+.dashboard-body {
+    background-color: #f4f7f6;
     min-height: 100vh;
-    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.logo-container {
-    margin-bottom: 20px;
+.grafico-circular {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #eee;
+    margin: 0 auto;
 }
 
-.logo-image {
-    max-width: 150px;
-    height: auto;
-}
-
-.navbar {
-    background-color: #4b6584;
+.fatia {
     width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    clip: rect(0, 150px, 150px, 75px);
+    transform-origin: center center;
 }
 
-.navbar-brand, .nav-link, .bnt {
-    color: #e2e2e2;
+.fatia-verde {
+    background-color: #198754;
+    transform: rotate(90deg);
 }
 
+.fatia-vermelha {
+    background-color: #dc3444;
+    transform: rotate(180deg);
+}
 
-.card-custom {
+.centro-circulo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #9FCBAF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.fixed-conta-container {
+    position: fixed;
+    bottom: 80px; /* espaço acima do footer */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(20, 48, 119, 0.75);
+    padding: 10px 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.84);
-    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
 }
 
-.card-custom:hover {
-    transform: translateY(-3px);
+.fixed-conta-container .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
 }
 
-.btn-invest {
-    background-color: #0e8046;
-    border: none;
+body.dashboard-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.btn-gasto {
-    background-color: #981229;
-    border: none;
+.container {
+    flex-grow: 1;
+    margin-bottom: auto;
 }
 
-.btn-conta {
-    background-color: #133896;
-    border: none;
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: #3d737b !important;
 }

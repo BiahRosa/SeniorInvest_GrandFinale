@@ -9,17 +9,8 @@ body {
     align-items: center;
 }
 
-.logo-container {
-    margin-bottom: 20px;
-}
-
-.logo-image {
-    max-width: 150px;
-    height: auto;
-}
-
 .navbar {
-    background-color: #4b6584;
+    background-color: #40744C;
     width: 100%;
 }
 
@@ -27,14 +18,15 @@ body {
     color: #f4f4f4 !important;
 }
 
-
-.card-custom {
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.84);
-    transition: 0.3s;
-}
-
-.card-custom:hover {
-    transform: translateY(-3px);
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #38744c; /* Cor de fundo */
+    color: #f3f3f3;
+    padding: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
 }
 

@@ -1,0 +1,42 @@
+.login-page {
+    background: linear-gradient(to bottom, #9FCBAF, #2E8B57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.64);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.card-custom {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.84);
+    transition: 0.3s;
+}
+
+.card-custom:hover {
+    transform: translateY(-3px);
+}
+
