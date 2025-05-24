@@ -1,0 +1,8 @@
+.navbar.navbar-expand-lg {
+    background-color: #4b6584 !important;
+    width: 100%;
+}
+
+.navbar-brand, .nav-link, .btn {
+    color: #f4f4f4 !important;
+}

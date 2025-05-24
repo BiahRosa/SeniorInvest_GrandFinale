@@ -4,10 +4,15 @@
 <head>
     <title>Cadastro de Usuário</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/global.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/navbar.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/components.css" rel="stylesheet">
 </head>
-<body class="container mt-4">
+<body class="login-page">
 <h2>Cadastro de Usuário</h2>
+<a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-primary">Voltar ao início</a>
 <form id="formCadastro" method="post" action="${pageContext.request.contextPath}/usuario">
     <div class="mb-3">
         <label>Nome</label>

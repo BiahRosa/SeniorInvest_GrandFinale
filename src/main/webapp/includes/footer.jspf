@@ -1,0 +1,51 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<img src="${pageContext.request.contextPath}/assets/footer.png">
+<footer class="text-center text-lg-start text-white mt-auto">
+    <div class="container p-4">
+        <div class="row my-4">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto"
+                     style="width: 150px; height: 150px;">
+                    <img src="${pageContext.request.contextPath}/assets/logo-light.svg" height="70" alt="Logo" />
+                </div>
+                <p class="text-center">Sua jornada financeira começa aqui.</p>
+                <ul class="list-unstyled d-flex flex-row justify-content-center">
+                    <li><a class="text-white px-2" href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a class="text-white px-2" href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a class="text-white ps-2" href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Recursos</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-cash pe-2"></i>Receitas e Gastos</a></li>
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-bank pe-2"></i>Contas</a></li>
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-bar-chart pe-2"></i>Investimentos</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Ajuda</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-info-circle pe-2"></i>Sobre o projeto</a></li>
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-bar-chart-line pe-2"></i>Estatísticas</a></li>
+                    <li class="mb-2"><a href="#" class="text-white"><i class="bi bi-envelope pe-2"></i>Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4">Contato</h5>
+                <ul class="list-unstyled">
+                    <li><p><i class="bi bi-geo-alt pe-2"></i>São Paulo, Brasil</p></li>
+                    <li><p><i class="bi bi-phone pe-2"></i>+55 (11) 99999-9999</p></li>
+                    <li><p><i class="bi bi-envelope pe-2"></i>contato@seniorinvest.com</p></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2025 Copyright: <a class="text-white" href="#">SeniorInvest.biah.dev.br</a>
+    </div>
+</footer>

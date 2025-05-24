@@ -3,6 +3,7 @@ package br.dev.biah.seniorinvest.controller;
 import br.dev.biah.seniorinvest.dao.impl.OracleGastoDAO;
 import br.dev.biah.seniorinvest.model.Gasto;
 
+import br.dev.biah.seniorinvest.model.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -20,14 +21,20 @@ public class GastoServlet extends HttpServlet {
         gasto.setDescricao(req.getParameter("descricao"));
         gasto.setValor(Double.parseDouble(req.getParameter("valor")));
         gasto.setData(LocalDate.parse(req.getParameter("data")));
-        gasto.setIdUsuario(1); // tem no banco
+
+        HttpSession session = req.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+        gasto.setIdUsuario(usuario.getId());
 
         dao.insert(gasto);
         resp.sendRedirect("gasto");
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Gasto> gastos = dao.getAll();
+        HttpSession session = req.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+
+        List<Gasto> gastos = dao.buscarPorUsuario(usuario.getId());
         req.setAttribute("gastos", gastos);
         req.getRequestDispatcher("gasto/listar-gastos.jsp").forward(req, resp);
     }

@@ -1,14 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 <html>
 <head>
-    <title>Nova Receita</title>
+    <title>Perfil do Usuário</title>
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/assets/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/global.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/telas.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/navbar.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/cadastro.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/components.css" rel="stylesheet">
 </head>
 <body>
@@ -29,27 +29,13 @@
 
         <main class="page-content">
             <div class="perfil-box">
-                <h2>Registrar Receita</h2>
-
-                <form method="post" action="../receita">
-                    <div class="mb-3">
-                        <label>Origem</label>
-                        <input class="form-control" name="origem" required>
-                    </div>
-                    <div class="mb-3">
-                        <label>Valor</label>
-                        <input class="form-control" type="number" name="valor" step="0.01" required>
-                    </div>
-                    <div class="mb-3">
-                        <label>Data</label>
-                        <input class="form-control" type="date" name="data" required>
-                    </div>
-                    <div class="d-flex justify-content-between mt-4">
-                        <a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-secondary text-light w-50 me-2">← Voltar</a>
-                        <button type="submit" class="btn btn-success w-50">Salvar</button>
-                    </div>
-
-                </form>
+                <h2 class="mb-4">Perfil do Usuário</h2>
+                <div class="profile-icon mb-3 text-center">
+                    <i class="bi bi-person-circle" style="font-size: 5rem; color: #198754;"></i>
+                </div>
+                <p><strong>Nome:</strong> ${sessionScope.usuarioLogado.nome}</p>
+                <p><strong>Email:</strong> ${sessionScope.usuarioLogado.email}</p>
+                <a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-success mt-3">Voltar ao início</a>
             </div>
         </main>
 

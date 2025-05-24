@@ -66,4 +66,61 @@ public class OracleContaDAO implements ContaDAO {
 
         return lista;
     }
+
+    public List<Conta> buscarPorUsuario(int idUsuario) {
+        List<Conta> lista = new ArrayList<>();
+        String sql = "SELECT * FROM T_FIN_CONTA WHERE USUARIO_ID_USUARIO = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Conta conta = new Conta();
+                conta.setIdConta(rs.getInt("id_conta"));
+                conta.setTipoConta(rs.getString("tipo_conta"));
+                conta.setNomeConta(rs.getString("nome_conta"));
+                conta.setSaldo(rs.getDouble("saldo"));
+                conta.setInstituicao(rs.getString("instituicao"));
+
+                Date dataCriacao = rs.getDate("data_criacao");
+                if (dataCriacao != null) {
+                    conta.setDataCriacao(dataCriacao.toLocalDate());
+                }
+
+                conta.setIdUsuario(rs.getInt("USUARIO_ID_USUARIO"));
+                lista.add(conta);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao listar contas do usuário: " + e.getMessage());
+        }
+
+        return lista;
+    }
+
+    public double calcularSaldoTotalPorUsuario(int idUsuario) {
+        String sql = "SELECT SUM(saldo) AS total FROM T_FIN_CONTA WHERE USUARIO_ID_USUARIO = ?";
+        double total = 0;
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                total = rs.getDouble("total");
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao calcular saldo total: " + e.getMessage());
+        }
+
+        return total;
+    }
+
+
 }

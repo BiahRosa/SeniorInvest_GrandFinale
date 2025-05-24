@@ -1,5 +1,5 @@
 .login-page {
-    background: linear-gradient(to bottom, #9FCBAF, #2E8B57);
+    background: linear-gradient(to bottom, #9FCBAF, #2E8B57) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,13 +7,13 @@
 }
 
 .login-box {
-    background-color: rgba(255, 255, 255, 0.64);
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+    background-color: rgba(255, 255, 255, 0.64) !important;
+    border-radius: 16px; !important;
+    padding: 40px; !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+    max-width: 400px; !important;
+    width: 100%; !important;
+    text-align: center; !important;
 }
 
 .logo-image {
@@ -30,13 +30,14 @@
     height: auto;
 }
 
-.card-custom {
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.84);
-    transition: 0.3s;
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #40747c;
+    color: #f3f3f3;
+    padding: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: auto;
 }
-
-.card-custom:hover {
-    transform: translateY(-3px);
-}
-

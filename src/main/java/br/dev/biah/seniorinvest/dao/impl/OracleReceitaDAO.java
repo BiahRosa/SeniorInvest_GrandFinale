@@ -56,4 +56,33 @@ public class OracleReceitaDAO implements ReceitaDAO {
 
         return lista;
     }
+
+    public List<Receita> buscarPorUsuario(int idUsuario) {
+        List<Receita> lista = new ArrayList<>();
+        String sql = "SELECT * FROM T_FIN_RECEITA WHERE USUARIO_ID_USUARIO = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Receita receita = new Receita();
+                receita.setId(rs.getInt("id_receita"));
+                receita.setOrigem(rs.getString("origem"));
+                receita.setValor(rs.getDouble("valor"));
+                receita.setData(rs.getDate("data_receita").toLocalDate());
+                receita.setIdUsuario(rs.getInt("USUARIO_ID_USUARIO"));
+                lista.add(receita);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao listar receitas do usuário: " + e.getMessage());
+        }
+
+        return lista;
+    }
+
+
 }

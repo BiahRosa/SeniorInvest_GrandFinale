@@ -56,4 +56,33 @@ public class OracleGastoDAO implements GastoDAO {
 
         return lista;
     }
+
+    public List<Gasto> buscarPorUsuario(int idUsuario) {
+        List<Gasto> lista = new ArrayList<>();
+        String sql = "SELECT * FROM T_FIN_GASTO WHERE USUARIO_ID_USUARIO = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, idUsuario);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Gasto gasto = new Gasto();
+                gasto.setId(rs.getInt("id_gasto"));
+                gasto.setDescricao(rs.getString("descricao"));
+                gasto.setValor(rs.getDouble("valor"));
+                gasto.setData(rs.getDate("data_gasto").toLocalDate());
+                gasto.setIdUsuario(rs.getInt("USUARIO_ID_USUARIO"));
+                lista.add(gasto);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Erro ao listar gastos: " + e.getMessage());
+        }
+
+        return lista;
+    }
+
+
 }

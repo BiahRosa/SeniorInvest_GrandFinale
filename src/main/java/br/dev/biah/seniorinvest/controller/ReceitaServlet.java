@@ -3,6 +3,7 @@ package br.dev.biah.seniorinvest.controller;
 import br.dev.biah.seniorinvest.dao.impl.OracleReceitaDAO;
 import br.dev.biah.seniorinvest.model.Receita;
 
+import br.dev.biah.seniorinvest.model.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -20,14 +21,20 @@ public class ReceitaServlet extends HttpServlet {
         receita.setOrigem(req.getParameter("origem"));
         receita.setValor(Double.parseDouble(req.getParameter("valor")));
         receita.setData(LocalDate.parse(req.getParameter("data")));
-        receita.setIdUsuario(1);
+
+        HttpSession session = req.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+        receita.setIdUsuario(usuario.getId());
 
         dao.insert(receita);
         resp.sendRedirect("receita");
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Receita> receitas = dao.getAll();
+        HttpSession session = req.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuarioLogado");
+
+        List<Receita> receitas = dao.buscarPorUsuario(usuario.getId());
         req.setAttribute("receitas", receitas);
         req.getRequestDispatcher("receita/listar-receitas.jsp").forward(req, resp);
     }
