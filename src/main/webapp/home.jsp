@@ -72,6 +72,16 @@
 
                     <div class="grid gap-3 col-6 mx-auto mb-5">
                         <div class="bg-secondary text-center rounded p-3">
+                            <h5 class="card-title text-light mb-0">Extrato</h5>
+                            <p class="text-light small">Veja seus Gastos e Receitas em um só lugar</p>
+                            <div>
+                                <a href="${pageContext.request.contextPath}/extrato" class="btn btn-dark text-light">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-3 col-6 mx-auto mb-5">
+                        <div class="bg-secondary text-center rounded p-3">
                             <h5 class="card-title text-light mb-0">Minhas Caixinhas</h5>
                             <p class="text-light small">Gerencie suas reservas com segurança</p>
                             <div>
@@ -82,7 +92,7 @@
                     </div>
 
                     <div class="row justify-content-center">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <ul class="list-group">
                                 <a href="telas/investimento.jsp" class="btn btn-secondary btn-outline-dark btn-lg">
                                     <i class="bi bi-clock"></i> Investimento
