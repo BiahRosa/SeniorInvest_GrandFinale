@@ -37,7 +37,7 @@
             </a>
             <h2>Receitas Registradas</h2>
             <table class="table table-bordered">
-                <tr><th>ID</th><th>Origem</th><th>Valor</th><th>Data</th></tr>
+                <tr><th>Data</th><th>Origem</th><th>Valor</th></tr>
 
                 <%
                     List<Receita> receitas = (List<Receita>) request.getAttribute("receitas");
@@ -45,10 +45,9 @@
                         for (Receita r : receitas) {
                 %>
                 <tr>
-                    <td><%= r.getId() %></td>
+                    <td><%= r.getData() %></td>
                     <td><%= r.getOrigem() %></td>
                     <td>R$ <%= r.getValor() %></td>
-                    <td><%= r.getData() %></td>
                 </tr>
                 <%
                     }

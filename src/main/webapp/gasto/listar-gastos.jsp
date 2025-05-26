@@ -36,17 +36,16 @@
             </a>
             <h2>Gastos Registrados</h2>
             <table class="table table-striped">
-                <tr><th>ID</th><th>Descrição</th><th>Valor</th><th>Data</th></tr>
+                <tr><th>Data</th><th>Descrição</th><th>Valor</th></tr>
                 <%
-                    List<Gasto> gastos = (List<Gasto>) request.getAttribute("gastos"); // <-- CORRETO
+                    List<Gasto> gastos = (List<Gasto>) request.getAttribute("gastos");
                     if (gastos != null) {
                         for (Gasto g : gastos) {
                 %>
                 <tr>
-                    <td><%= g.getId() %></td>
+                    <td><%= g.getData() %></td>
                     <td><%= g.getDescricao() %></td>
                     <td>R$ <%= g.getValor() %></td>
-                    <td><%= g.getData() %></td>
                 </tr>
                 <%      }
                 } else {

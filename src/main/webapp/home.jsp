@@ -72,11 +72,11 @@
 
                     <div class="grid gap-3 col-6 mx-auto mb-5">
                         <div class="bg-secondary text-center rounded p-3">
-                            <h5 class="card-title text-light mb-0">Contas</h5>
-                            <p class="text-light small">Gerencie suas contas bancarias</p>
+                            <h5 class="card-title text-light mb-0">Minhas Caixinhas</h5>
+                            <p class="text-light small">Gerencie suas reservas com segurança</p>
                             <div>
                                 <a href="conta/cadastro-conta.jsp" class="btn btn-dark text-light">Cadastrar</a>
-                                <a href="conta" class="btn btn-outline-light">Ver Contas</a>
+                                <a href="conta" class="btn btn-outline-light">Ver Todas</a>
                             </div>
                         </div>
                     </div>

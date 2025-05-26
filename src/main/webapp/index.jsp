@@ -43,11 +43,11 @@
                         </a>
                     </div>
 
-                    <div class="d-flex justify-content-between mt-4">
-                        <a href="${pageContext.request.contextPath}/usuario/cadastro-usuario.jsp" class="btn btn-outline-success w-50 me-2 ">
+                    <div class="d-flex justify-between mt-4">
+                        <a href="${pageContext.request.contextPath}/usuario/cadastro-usuario.jsp" class="btn btn-success w-50 me-2 ">
                             <i class="bi bi-person-plus"></i> Cadastrar
                         </a>
-                        <a href="demo" class="btn btn-outline-warning w-50">
+                        <a href="demo" class="btn btn-warning w-50">
                             <i class="bi bi-person-circle"></i> Visitante
                         </a>
                     </div>

@@ -59,7 +59,7 @@ public class OracleReceitaDAO implements ReceitaDAO {
 
     public List<Receita> buscarPorUsuario(int idUsuario) {
         List<Receita> lista = new ArrayList<>();
-        String sql = "SELECT * FROM T_FIN_RECEITA WHERE USUARIO_ID_USUARIO = ?";
+        String sql = "SELECT * FROM T_FIN_RECEITA WHERE USUARIO_ID_USUARIO = ? ORDER BY DATA_RECEITA DESC";
 
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

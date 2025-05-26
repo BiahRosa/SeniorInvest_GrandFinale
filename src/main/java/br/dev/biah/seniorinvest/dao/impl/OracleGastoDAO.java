@@ -59,7 +59,7 @@ public class OracleGastoDAO implements GastoDAO {
 
     public List<Gasto> buscarPorUsuario(int idUsuario) {
         List<Gasto> lista = new ArrayList<>();
-        String sql = "SELECT * FROM T_FIN_GASTO WHERE USUARIO_ID_USUARIO = ?";
+        String sql = "SELECT * FROM T_FIN_GASTO WHERE USUARIO_ID_USUARIO = ? ORDER BY DATA_GASTO DESC";
 
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {

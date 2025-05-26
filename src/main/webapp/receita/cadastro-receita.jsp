@@ -44,10 +44,17 @@
                         <label>Data</label>
                         <input class="form-control" type="date" name="data" required>
                     </div>
-                    <div class="d-flex justify-content-between mt-4">
+                    <div class="d-flex justify-content-between mt-3">
                         <a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-secondary text-light w-50 me-2">← Voltar</a>
                         <button type="submit" class="btn btn-success w-50">Salvar</button>
                     </div>
+                    <div class="mt-3">
+                        <a href="${pageContext.request.contextPath}/receita"
+                           class="btn btn-dark text-light mb-4">
+                            Listar Receitas
+                        </a>
+                    </div>
+
 
                 </form>
             </div>
