@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-lg mb-3">
             <div class="container-fluid">
                 <img src="${pageContext.request.contextPath}/assets/logo.svg" alt="Logo" width="30" height="24">
-                <a class="navbar-brand fw-bold text-light" href="${pageContext.request.contextPath}/home.jsp">SêniorInvest</a>
+                <a class="navbar-brand fw-bold text-light" href="${pageContext.request.contextPath}/home">SêniorInvest</a>
                 <div>
                     <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/logout">Sair</a>
                     <a class="btn btn-outline-light me-2" href="${pageContext.request.contextPath}/telas/perfil.jsp">
@@ -35,7 +35,7 @@
                 </div>
                 <p><strong>Nome:</strong> ${sessionScope.usuarioLogado.nome}</p>
                 <p><strong>Email:</strong> ${sessionScope.usuarioLogado.email}</p>
-                <a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-success mt-3">Voltar ao início</a>
+                <a href="${pageContext.request.contextPath}/home" class="btn btn-success mt-3">Voltar ao início</a>
             </div>
         </main>
 

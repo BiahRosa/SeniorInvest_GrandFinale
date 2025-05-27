@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-lg mb-3">
             <div class="container-fluid">
                 <img src="${pageContext.request.contextPath}/assets/logo.svg" alt="Logo" width="30" height="24">
-                <a class="navbar-brand fw-bold text-light" href="${pageContext.request.contextPath}/home.jsp">SêniorInvest</a>
+                <a class="navbar-brand fw-bold text-light" href="${pageContext.request.contextPath}/home">SêniorInvest</a>
                 <div>
                     <a class="btn btn-outline-light" href="${pageContext.request.contextPath}/logout">Sair</a>
                     <a class="btn btn-outline-light me-2" href="${pageContext.request.contextPath}/telas/perfil.jsp">
@@ -45,7 +45,7 @@
                         <input class="form-control" type="date" name="data" required>
                     </div>
                     <div class="d-flex justify-content-between mt-3">
-                        <a href="${pageContext.request.contextPath}/home.jsp" class="btn btn-secondary text-light w-50 me-2">← Voltar</a>
+                        <a href="${pageContext.request.contextPath}/home" class="btn btn-secondary text-light w-50 me-2">← Voltar</a>
                         <button type="submit" class="btn btn-success w-50">Salvar</button>
                     </div>
                     <div class="mt-3">

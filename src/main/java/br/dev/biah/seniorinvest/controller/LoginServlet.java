@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("usuarioLogado", completo);
 
 
-            resp.sendRedirect("home.jsp");
+            resp.sendRedirect("home");
         } else {
             req.setAttribute("erro", "Usuário ou senha inválidos.");
             req.getRequestDispatcher("index.jsp").forward(req, resp);
